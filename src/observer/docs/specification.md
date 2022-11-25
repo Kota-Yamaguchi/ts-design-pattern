@@ -124,4 +124,9 @@ Observerパターンを使う理由には以下のモチベーションがある
 - 抽象メソッドに依存したい。具象クラスの置き換えだけでロジックを修正したい
 </details>
 
+<details>
+<summary> 使用例　</summary>
 
+![使用例](https://github.com/Kota-Yamaguchi/ts-design-pattern/blob/main/src/observer/docs/examples.svg)
+
+</details>
