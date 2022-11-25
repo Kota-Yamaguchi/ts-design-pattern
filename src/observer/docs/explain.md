@@ -15,7 +15,7 @@ observerはPublisherを見続ける。
 ※今回はPush型で実装している。
 
 ### 処理をシーケンシャルに書くのはダメなのか？
-以下のようなコードはどうか？
+[実装に関して](https://github.com/Kota-Yamaguchi/ts-design-pattern/blob/main/src/observer/docs/specification.md#%E5%AE%9F%E8%A3%85%E3%81%AE%E4%BB%95%E6%A7%98%E6%9B%B8)以下のようなコードはどうか？
 ``` typescript 
 ## main.ts
 class service(){
