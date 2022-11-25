@@ -124,19 +124,29 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="43" value="モジュールA" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="785" y="620" width="270" height="180" as="geometry"/>
+                    <mxGeometry x="720" y="705" width="270" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="47" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="44" target="46">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
+                <mxCell id="56" value="イベント送る" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="47">
+                    <mxGeometry x="-0.1834" relative="1" as="geometry">
+                        <mxPoint y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="44" value="ドメインA" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="860" y="730" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="795" y="820" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" value="モジュールB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="1155" y="620" width="290" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" style="edgeStyle=none;html=1;endArrow=diamondThin;endFill=0;" edge="1" parent="1" source="46" target="48">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Push型で別モジュールに送信" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="49">
+                    <mxGeometry x="-0.066" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="46" value="Publisher" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="1015" y="820" width="120" height="60" as="geometry"/>
@@ -156,8 +166,16 @@
                         <mxPoint x="1205" y="800" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="58" value="Push型で別モジュールに送信" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="53">
+                    <mxGeometry x="0.0602" y="4" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="55" value="使用例" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
                     <mxGeometry x="730" y="-90" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="DBを介して同じことはできるが、ローカルだとやりすぎな可能性がある。&lt;br&gt;リモートにある別コンテキストにはDB(イベントストア、Queue)などで送信することがある。" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=10;position=0.58;base=57;position2=0.91;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="570" width="260" height="107.5" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

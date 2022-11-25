@@ -1,7 +1,10 @@
 
 //よく書籍とかに乗っているかきかた
 const main=() => {
-    const service = new QuantumCalculationService();
+    // const service = new QuantumCalculationService();
+
+    //DIするなら以下
+    const service = new QuantumCalculationServiceDI(new DFTCalculator(), new Notificator());
     service.execute();
 }
 
@@ -9,16 +12,29 @@ class QuantumCalculationService {
     execute(): void {
         const publisher: Publisher = new DFTCalculator();
         const observer1: Observer = new Notificator();
-        const observer2: Observer = new SuperNotificator();
+        // const observer2: Observer = new SuperNotificator();
 
         publisher.addObserver(observer1);
-        publisher.addObserver(observer2);
+        // publisher.addObserver(observer2);
 
         const result =publisher.execute();
         console.log(result)
     }
 }
 
+export class QuantumCalculationServiceDI {
+    private readonly  publisher: Publisher;
+    private readonly observer: Observer;
+    constructor(publisher: Publisher, observer: Observer){
+        this.publisher = publisher;
+        this.observer = observer;
+    }
+    execute(): void {
+        this.publisher.addObserver(this.observer);
+        const result =this.publisher.execute();
+        console.log(result)
+    }
+}
 
 export interface Observer {
     handlerEvent(): void

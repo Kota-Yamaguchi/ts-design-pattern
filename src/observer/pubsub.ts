@@ -1,7 +1,9 @@
 
 //個人的には実用的だと思う書き方
 const main=() => {
-    const service = new QuantumCalculationService();
+    // const service = new QuantumCalculationService();
+     //DIするなら以下
+     const service = new QuantumCalculationServiceDI(new Notificator());
     service.execute();
 }
 
@@ -18,7 +20,18 @@ class QuantumCalculationService {
         
     }
 }
+export class QuantumCalculationServiceDI {
 
+    private readonly observer: Observer;
+    constructor(observer: Observer){
+        this.observer = observer;
+    }
+    execute(): void {
+        const publisher: Publisher = new Publisher(new DFTCalculator());
+        publisher.addObserver(this.observer);
+        publisher.notifyObservers();
+    }
+}
 
 export interface Observer {
     handlerEvent(event:Event): void
